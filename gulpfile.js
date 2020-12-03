@@ -1,7 +1,7 @@
 const {src, dest} = require('gulp');
 
 function move(){
-  return src('src/*')
+  return src('src/**/*')
   .pipe(dest('dest/'))
 }
 
