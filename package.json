@@ -1,0 +1,22 @@
+{
+  "name": "erin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erinringland/QuizApp.git"
+  },
+  "author": "Erin Ringland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erinringland/QuizApp/issues"
+  },
+  "homepage": "https://github.com/erinringland/QuizApp#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
