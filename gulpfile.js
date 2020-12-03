@@ -1,5 +1,8 @@
 const {src, dest} = require('gulp');
 
-exports.default = () => {
-  return src('src/*').pipe(dest('dest/'));
+function move(){
+  return src('src/*')
+  .pipe(dest('dest/'))
 }
+
+exports.move = move;
