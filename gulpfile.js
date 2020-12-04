@@ -18,3 +18,12 @@ gulp.task('styles', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dest/css/'));
 });
+
+gulp.task('js', function () {
+  return gulp.src('src/js/*.js')
+    .pipe(concat('main.js'))
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dest/js/'));
+});
