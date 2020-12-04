@@ -33,3 +33,5 @@ gulp.task('images', function () {
   .pipe(imagemin())
   .pipe(gulp.dest('dest/images/'))
 });
+
+gulp.task('default', gulp.parallel('move', 'styles', 'js', 'images'));
