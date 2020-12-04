@@ -27,3 +27,9 @@ gulp.task('js', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dest/js/'));
 });
+
+gulp.task('images', function () {
+  return gulp.src('src/images/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('dest/images/'))
+});
