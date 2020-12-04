@@ -1,24 +1,12 @@
-// const {src, dest} = require('gulp');
-// const {src, dest} = require('gulp');
+const gulp = require('gulp');
+const csso = require('gulp-csso');
+const concatCss = require('gulp-concat-css');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
+const imagemin = require('gulp-imagemin');
 
-
-const { src, dest, series, parallel } = require ('gulp');
-
-function move(){
-  return src('src/**/*')
-  .pipe(dest('dest/'))
-}
-
-const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
-const autoprefixer = require('autoprefixer');
-
-function stylesTask() {
-  return src('src/css/*.css')
-  .pipe(postcss([ autoprefixer() ]))
-  .pipe(dest('/dest/css'))
-}
-
-exports.move = move;
-exports.styles = stylesTask;
-
+gulp.task('move', function () {
+  return gulp.src('src/*')
+      .pipe(gulp.dest('dest/'));
+});
