@@ -21,7 +21,7 @@
 
 
 body{
-  background: #f7f2ec;
+  background: #61575d;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -35,17 +35,19 @@ body{
   padding: 50px;
   background: #fff;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 h1{
   font-weight: 900;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 25px;
 }
 
-h2{
-  font-weight: 400;
+.intro-para{
+  text-align: center;
   margin-bottom: 25px;
 }
 
@@ -55,6 +57,31 @@ h2{
   border-radius: 10px;
   color: #fff;
   border: 0px;
-  font-size: 14px;
+  font-size: 1em;
   background: #a52a2a;
+}
+
+.question{
+  margin-bottom: 25px;
+  text-align: center;
+} 
+
+.progress{
+  margin-top: 25px;
+  text-align: center;
+}
+
+.answers{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button{
+  background: #a03f3f;
+  border:0;
+  flex-grow: 1;
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+  font-size: 1em;
 }
