@@ -51,14 +51,21 @@ h1{
   margin-bottom: 25px;
 }
 
+.hide{
+  display: none;
+}
+
 .startQuiz{
   width: 100%;
   padding: 10px;
-  border-radius: 10px;
   color: #fff;
   border: 0px;
   font-size: 1em;
   background: #a52a2a;
+}
+
+.question-area{
+  width: 100%;
 }
 
 .question{
@@ -76,7 +83,7 @@ h1{
   flex-wrap: wrap;
 }
 
-button{
+.question-area button{
   background: #a03f3f;
   border:0;
   flex-grow: 1;
