@@ -14,7 +14,7 @@ gulp.task('move', function () {
 
 gulp.task('styles', function () {
   return gulp.src('src/css/*')
-    .pipe(concat('style.css'))
+    .pipe(concat('styles.css'))
     .pipe(sourcemaps.init())
     .pipe(postcss([autoprefixer() ]))
     .pipe(csso())
