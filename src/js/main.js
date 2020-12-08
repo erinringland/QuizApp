@@ -63,6 +63,5 @@ let quiz = new Quiz([questions1, questions2, questions3, questions4,questions5])
 
 start.addEventListener('click', function(e){
   e.preventDefault();
-  UI.startGame();
+  quiz.startGame();
 })
-
