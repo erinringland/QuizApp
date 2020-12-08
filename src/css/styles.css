@@ -93,3 +93,8 @@ h1{
   width: 40%;
   font-size: 1em;
 }
+
+.question-area button:hover{
+  background: #23233f;
+  color:#fff;
+}
