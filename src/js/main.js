@@ -1,18 +1,14 @@
-
-const start = document.querySelector('.startQuiz');
-const questionArea = document.querySelector('.question-area');
-const questionLine = document.querySelector('.question');
-const answerArea = document.getElementById('answers');
-const progressArea = document.querySelector('.progress');
+// const start = document.querySelector('.startQuiz');
+// const questionArea = document.querySelector('.question-area');
+// const questionLine = document.querySelector('.question');
+// const answerArea = document.getElementById('answers');
+// const progressArea = document.querySelector('.progress');
 
 class Question{
   constructor(question, options, answer){
     this.question = question;
     this.options = options;
     this.answer = answer;
-  }
-  correct(choice){
-    return this.answer === choice;
   }
 }
 
@@ -22,8 +18,39 @@ class Quiz{
     this.questions = questions;
     this.questionIndex = 0;
   }
+  getStarted(){
+    console.log('Question: ' + this.questions[this.questionIndex].question);
+    console.log(this.questions[this.questionIndex].options);
+    console.log(this.questions[this.questionIndex].answer);
+  }
+  choice(choice){
+    console.log('Your choice is: ' + choice);
+    if(choice === this.questions[this.questionIndex].answer){
+      console.log(`You're right!`)
+      this.score++;
+      console.log(`You're score is now ${this.score}`)
+    } else{
+    console.log(`You're wrong!`)
+    console.log(`You're score is now ${this.score}`)
+    }
+    console.log(`${this.questionIndex + 1} question of ${this.questions.length}`);
+
+  }
+  nextQuestion(){
+    this.questionIndex++;
+  }
+  endQuiz(){
+    if(this.questionIndex === this.questions.length){
+      console.log('The game has ended!')
+    }
+  }
 }
 
+class UI{
+  constructor(){
+    
+  }
+}
 
 
 // **** UI
@@ -67,6 +94,23 @@ let questions5 = new Question('Which section of history hasn\'t been explored in
 
 let quiz = new Quiz([questions1, questions2, questions3, questions4,questions5]);
 
+quiz.getStarted();
+quiz.choice(`AC Odyssey`);
+quiz.nextQuestion();
+quiz.getStarted();
+quiz.choice(`The ring finger`);
+quiz.nextQuestion();
+quiz.getStarted();
+quiz.choice(`Sir Arthur Conan Doyle`);
+quiz.nextQuestion();
+quiz.getStarted();
+quiz.choice(`AC Origins`);
+quiz.nextQuestion();
+quiz.getStarted();
+quiz.choice(`Ancient Rome`);
+quiz.nextQuestion();
+quiz.getStarted();
+quiz.choice(`Ancient Rome`);
 // start.addEventListener('click', function(e){
 //   e.preventDefault();
 //   quiz.startGame();
