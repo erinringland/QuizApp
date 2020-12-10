@@ -18,11 +18,6 @@ class Quiz{
     this.questions = questions;
     this.questionIndex = 0;
   }
-  startGame(){
-    start.classList.add('hide');
-    questionArea.classList.remove('hide');
-    this.getStarted();
-  }
   getStarted(){
     return this.questions[this.questionIndex];
   }
@@ -37,30 +32,37 @@ class Quiz{
       return true;
     }
   }
-  render(){
-    if(this.endQuiz()){
+}
+class UI{
+  static startGame(){
+    start.classList.add('hide');
+    questionArea.classList.remove('hide');
+    quiz.getStarted();
+  }
+  static render(){
+    if(quiz.endQuiz()){
       this.end();
     } else{
-      questionLine.innerHTML = this.getStarted().question;
-      let choices = this.getStarted().options;
+      questionLine.innerHTML = quiz.getStarted().question;
+      let choices = quiz.getStarted().options;
       for (let i = 0; i < choices.length; i++) {
-        let element = document.getElementById("choice" + i);
+        let element = document.getElementById('choice' + i);
         element.innerHTML = choices[i];
         this.guess("btn" + i, choices[i]);
       }
-      progressArea.innerHTML = `Question ${this.questionIndex + 1} of ${this.questions.length}`;
+      progressArea.innerHTML = `Question ${quiz.questionIndex + 1} of ${quiz.questions.length}`;
     }
   }
-  guess(id, choice) {
+  static guess(id, choice) {
     let button = document.getElementById(id);
     button.onclick = function() {
       quiz.choice(choice);
-      quiz.render();
+      UI.render();
     }
   }
-  end(){
+  static end(){
     questionLine.innerHTML = ``;
-    answerArea.innerHTML = `Your score is ${this.score}`;
+    answerArea.innerHTML = `Your score is ${quiz.score}`;
     progressArea.innerHTML = ``;
   }
 }
@@ -74,6 +76,6 @@ let quiz = new Quiz([questions1, questions2, questions3, questions4]);
 
 start.addEventListener(`click`, function(e){
   e.preventDefault();
-  quiz.startGame();
+  UI.startGame();
 })
-quiz.render();
+UI.render();
