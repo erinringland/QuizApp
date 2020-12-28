@@ -1,5 +1,6 @@
 const start = document.querySelector('.startQuiz');
 const questionArea = document.querySelector('.question-area');
+const introPara = document.querySelector('.intro-para');
 const questionLine = document.querySelector('.question');
 const answerArea = document.getElementById('answers');
 const progressArea = document.querySelector('.progress');
@@ -36,13 +37,14 @@ class Quiz{
 class UI{
   static startGame(){
     start.classList.add('hide');
+    introPara.classList.add('hide');
     questionArea.classList.remove('hide');
     quiz.getStarted();
   }
   static render(){
     if(quiz.endQuiz()){
       this.end();
-    } else{
+    } else {
       questionLine.innerHTML = quiz.getStarted().question;
       let choices = quiz.getStarted().options;
       for (let i = 0; i < choices.length; i++) {
@@ -108,7 +110,7 @@ let questions4 = new Question(`Which section of history hasn't been explored in 
 let questions5 = new Question(`Which Assassins are related?`, [`Evie & Jacob`, `Connor & Edward`, `Kassandra & Aya`, `All`], `All`);
 let questions6 = new Question(`Who started the Brotherhood?`, [`Ezio`, `Altaïr`, `Bayek`, `Kassandra`], `Bayek`);
 let questions7 = new Question(`Which European city hasn't been featured in a game?`, [`Berlin`, `Paris`, `Rome`, `London`], `Berlin`);
-let questions8 = new Question(`Which historic monument you CANNOT climb?`, [`The Pyramids of Giza`, `Big Ben`, `Statue of Liberty`, `Statue of Zeus at Olympia`], `Statue of Liberty`);
+let questions8 = new Question(`Which historic monument can you NOT climb?`, [`The Pyramids of Giza`, `Big Ben`, `Statue of Liberty`, `Statue of Zeus at Olympia`], `Statue of Liberty`);
 let questions9 = new Question(`What era does the latest game explore?`, [`Ancient Greece`, `9 A.D. England`, `Victorian England`, `Renaissance Italy`], `9 A.D. England`);
 let questions10 = new Question(`Who was featured in three games?`, [`Evie`, `Arno`, `Ezio`, `Altaïr`], `Ezio`);
 let questions11 = new Question(`Which contient hasn't been explored?`, [`Australia`, `North America`, `Africa`, `Asia`], `Australia`);
