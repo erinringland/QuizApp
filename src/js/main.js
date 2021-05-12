@@ -123,31 +123,3 @@ start.addEventListener(`click`, function(e){
   UI.startGame();
 })
 UI.render();
-
-// const expr = 0;
-// switch (expr) {
-//   case 1:
-//   case 2:
-//   case 3:
-//     console.log(`You need to train more! Keep going!`);
-//     break;
-//   case 4:
-//   case 5:
-//   case 6:
-//     console.log(`Good job! Keep training!`);
-//     break;
-//   case 7:
-//   case 8:
-//   case 9:
-//     console.log(`Your hard work is paying off! Keep going!`);
-//     break;  
-//   case 10:
-//   case 11:
-//     console.log(`You're almost there! Keep trying!`);
-//     break;  
-//   case 12:
-//     console.log(`Congratulations! You are a Master Assassin!`);
-//     break;
-//   default:
-//     console.log(`Sorry, you need to train more!`);
-// }
